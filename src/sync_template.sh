@@ -110,6 +110,8 @@ if [ -s "${TEMPLATE_SYNC_IGNORE_FILE_PATH}" ]; then
   git checkout -- .
 fi
 
+cmd_from_yml_file "precommit"
+
 if git diff --quiet && git diff --staged --quiet; then
   info "nothing to commit"
   exit 0
